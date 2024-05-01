@@ -11,8 +11,7 @@ class CNN(nn.Module):
         self.conv3      = self.conv(in_channels=64, out_channels=128, kernel_size=3, padding=1)
         self.conv4      = self.conv(in_channels=128, out_channels=256, kernel_size=3, padding=1)
 
-        self.linear1    = nn.Linear(1024, 256)
-        self.linear2    = nn.Linear(256, 10)
+        self.linear1    = nn.Linear(1024, 100)
 
         self.relu       = nn.ReLU(inplace=True)
         self.flatten    = nn.Flatten()
@@ -41,9 +40,7 @@ class CNN(nn.Module):
         x = self.flatten(x)
 
         x = self.linear1(x)
-        x = self.relu(x)
 
-        x = self.linear2(x)
         x = self.sigmoid(x)
 
         return x
