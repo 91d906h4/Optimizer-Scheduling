@@ -23,8 +23,12 @@ class Optimizer:
             0.0009,
             0.0008,
             0.0005,
-            0.0001
+            0.0001,
         ]
+
+        # Check if epoch is in the range of the schedule.
+        if epoch >= len(schedule):
+            epoch = len(schedule) - 1
 
         lr = schedule[epoch]
 
