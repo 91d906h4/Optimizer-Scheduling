@@ -17,6 +17,11 @@
 ### RAdam
 
 <div align="center">
+    <img src="./assets/radam_sch_dis_0.003.png" /><br />
+    <i>RAdam with Fixed Learning Rate (lr=0.003)</i>
+</div><br />
+
+<div align="center">
     <img src="./assets/radam_sch_dis_0.03.png" /><br />
     <i>RAdam with Fixed Learning Rate (lr=0.03)</i>
 </div><br />
