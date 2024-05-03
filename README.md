@@ -2,7 +2,7 @@
 
 ## Experimental Results
 
-### Adan
+### Adam
 
 <div align="center">
     <img src="./assets/adam_sch_dis_0.01.png" /><br />
