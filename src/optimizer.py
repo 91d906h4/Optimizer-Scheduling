@@ -18,21 +18,10 @@ class Optimizer:
 
         """
 
-        schedule = [
-            0.001,
-            0.0009,
-            0.0008,
-            0.0005,
-            0.0001,
-        ]
-
-        # Check if epoch is in the range of the schedule.
-        if epoch >= len(schedule):
-            epoch = len(schedule) - 1
-
-        lr = schedule[epoch]
-
-        self.optimizer = optim.Adam(params=self.params, lr=lr)
+        if epoch < 10:
+            self.optimizer = optim.Adam(params=self.params, lr=0.001)
+        else:
+            self.optimizer = optim.SGD(params=self.params, lr=0.03)
 
     def step(self) -> None:
         # Make sure the optimizer is not None.
