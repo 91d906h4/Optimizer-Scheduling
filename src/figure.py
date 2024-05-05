@@ -45,11 +45,12 @@ class Figure:
         ax.legend()
 
         # Set title.
-        plt.suptitle(title, x=0.5, y=0, ha="center", fontsize=12)
+        if title:
+            plt.suptitle(t=title, x=0.5, y=0, ha="center", fontsize=12)
 
         # Show figure.
         plt.show()
 
         # Save image.
         if save:
-            figure.savefig(f"./{title}.png")
+            figure.savefig(fname=f"./{title}.png")
