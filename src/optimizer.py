@@ -18,10 +18,19 @@ class Optimizer:
 
         """
 
-        if epoch < 10:
-            self.optimizer = optim.Adam(params=self.params, lr=0.001)
+        if epoch < 5:
+            schedule = [
+                0.001,
+                0.0009,
+                0.0008,
+                0.0005,
+                0.0001,
+            ]
+            lr = schedule[epoch]
+            self.optimizer = optim.Adam(params=self.params, lr=lr)
+
         else:
-            self.optimizer = optim.SGD(params=self.params, lr=0.03)
+            self.optimizer = optim.SGD(params=self.params, lr=0.001)
 
     def step(self) -> None:
         # Make sure the optimizer is not None.
